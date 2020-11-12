@@ -1,0 +1,140 @@
+body {
+  background-color: black;
+  margin-top: 50px;
+  margin-left: 60px;
+  margin-right: 50px;
+}
+
+h1,h2 {
+  font-family: OCR-A, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+h1 {
+  color: #169600;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+h2 {
+  color: #169600;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+img{
+  height: 160px;
+  width: 240px;
+}
+.game-info-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+.game-info {
+  color: #169600;
+  font-size: 15px;
+  padding-bottom: 20px;
+  font-family: OCR-A, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 10px;
+  justify-content: left;
+  perspective: 1000px;
+}
+.card {
+  position: relative;
+  background-color: black;
+  width: 240px;
+  height: 160px;
+}
+.card-value {
+  position: relative;
+  transition: transform 100ms ease-in-out;
+  transform: scale(.9);
+}
+.card-front:hover .card-value {
+  transform: scale(1);
+}
+.card-face{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  transition: transform 500ms ease-in-out;
+}
+.card.visible .card-back{
+  transform: rotateY(-180deg);
+}
+.card.visible .card-front{
+  transform: rotateY(0deg);
+}
+
+.card-front{
+  transform: rotateY(180deg);
+}
+.frame{
+  position: absolute;
+  width: 240px;
+  height: 160px;
+  transition: transform 100ms ease-in-out;
+}
+.words{
+  position: absolute;
+  width: 240px;
+  height:160px;
+}
+.button{
+  position: absolute;
+  width: 240px;
+  height: 160px;
+  transition: transform 100ms ease-in-out;
+}
+.card-back:hover .frame{
+  transform: scale(1.05,1.05);
+}
+.card-back:hover .button{
+  transform:translateY(5px);
+}
+.overlay-text {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #169600;
+  font-family: OCR-A, serif;
+  transition: background-color 500ms, font-size 500ms;
+}
+
+.overlay-text-small {
+  font-size: .3em;
+}
+
+.overlay-text.visible {
+  display: flex;
+  animation: overlay-grow 500ms forwards;
+}
+
+.card.matched .card-front .card-value {
+  display: none;
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 10em;
+  }
+}

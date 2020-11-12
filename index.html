@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="style.css"></link>
+  <script src="script.js" async></script>
+</head>
+
+<body>
+  <h1>QUESTION ELIMINATOR</h1>
+
+  <div class="overlay-text visible">
+    //CLICK TO START-------------->
+  </div>
+  <div id="game-over-text" class="overlay-text">
+    GAME OVER
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    VICTORY
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+
+  <div class="game-container">
+    <div class="game-info-container">
+      <div class="game-info">
+        Flips <span id="flips">0</span>
+      </div>
+      <div class="game-info">
+        Time <span id="time-remaining">1000</span>
+      </div>
+    </div>
+    <!--general-->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGenerals/G2-08.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/general.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGenerals/G2-09.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/general.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGenerals/G2-10.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/general.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGenerals/G2-11.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/general.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGenerals/G2-12.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/general.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGenerals/G2-13.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/general.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGenerals/G2-14.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/general.png">
+      </div>
+    </div>
+    <!--decolonization-->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-08.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-09.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-10.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-11.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-12.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-13.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-14.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-15.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-16.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-17.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-18.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-19.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QDecolonization/de-20.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/decolonization.png">
+      </div>
+    </div>
+    <!--game-->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-08.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-09.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-10.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-11.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-12.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-13.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-14.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QGame/ga-15.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/game.png">
+      </div>
+    </div>
+    <!--civilization-->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QCivilization/ci-08.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/civilization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QCivilization/ci-09.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/civilization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QCivilization/ci-10.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/civilization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QCivilization/ci-11.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/civilization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QCivilization/ci-12.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/civilization.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QCivilization/ci-13.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/civilization.png">
+      </div>
+    </div>
+    <!--native culture-->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-08.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-09.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-10.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-11.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-12.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-13.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-14.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QNative/na-15.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/native.png">
+      </div>
+    </div>
+    <!--personal-->
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-08.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-09.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-10.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-11.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-12.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-13.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-14.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="words", src="QPersonal/all-15.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="button", src="QGenerals/btn.png">
+        <img class="frame", src="QGenerals/frame.png">
+        <img class="card-value", src="backside/personal.png">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
